@@ -60,7 +60,8 @@ class BeerXMLImport(FlaskView):
         boil_temp = 100 if cbpi.get_config_parameter("unit", "C") == "C" else 212
 
         # READ KBH DATABASE
-        Step.delete_all()
+        # Don't erase existing steps. It allow us to merge recipes steps with equipament/process steps.
+        #Step.delete_all()
         StepView().reset()
 
         try:
