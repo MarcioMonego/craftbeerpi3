@@ -32,7 +32,7 @@ class RESTImport(FlaskView):
             boil_temp = 100 if cbpi.get_config_parameter("unit", "C") == "C" else 212
 
             # READ KBH DATABASE
-            Step.delete_all()
+            #Step.delete_all()
             StepView().reset()
 
 
